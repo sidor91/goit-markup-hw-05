@@ -48,7 +48,7 @@
         <!--Hero screen-->
         <section class="hero">
             <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-            <button type="button" class="hero-button">Замовити послугу</button>
+            <button type="button" class="hero-button" data-modal-open>Замовити послугу</button>
         </section>
         <!--Features-->
         <section class="section">
@@ -301,6 +301,16 @@
                 </ul>
             </div>
         </section>
+        <!-- Modal -->
+        <div class="backdrop " data-modal>
+            <div class="modal">
+                <button data-modal-close>
+                    <svg>
+                        <use href="./images/icons.svg#icon-closebutton"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </main>
     <!-- Footer -->
     <footer class="footer">
@@ -356,5 +366,6 @@
             </div>           
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@
     --social-item-color:#AFB1B8;
     --footer-social-background:rgba(255, 255, 255, 0.1);
     --service-title-background:rgba(47, 48, 58, 0.8);
+    --backdrop-color:rgba(0, 0, 0, 0.2);
 }
 
 h1,
@@ -444,6 +445,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
     width: 170px;
     height: 92px;
     
@@ -466,6 +468,38 @@ body {
 .clients-item:hover {
     border-color: var(--accent-color);
     cursor: pointer;
+}
+
+/* Modal */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backdrop-color);
+    /* background-color: red; */
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    min-width: 528px;
+    min-height: 581px;
+
+    background: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    /* background-color: #2196F3; */
 }
 
 /* Footer */
@@ -670,7 +704,23 @@ body {
     position: relative;
 }
 
+.project-thumb::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(33, 150, 243, 0.9);
+    opacity: 0;
+}
+
 .project-list > .item:hover .project-desc {
+    opacity: 1;
+}
+
+.project-list > .item:hover .project-thumb::before {
     opacity: 1;
 }
 
@@ -680,9 +730,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
+    
     width: 100%;
     height: 100%;
-    opacity: 0;
 
     font-style: normal;
     font-weight: 400;
@@ -691,5 +742,5 @@ body {
     letter-spacing: 0.03em;
     
     color: var(--white-color);
-    background-color: rgba(33, 150, 243, 0.9);
+    /* background-color: rgba(33, 150, 243, 0.9); */
 }
