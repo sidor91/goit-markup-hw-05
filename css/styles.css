@@ -23,6 +23,7 @@
     --order-button-hover:#188CE8;
     --social-item-color:#AFB1B8;
     --footer-social-background:rgba(255, 255, 255, 0.1);
+    --service-title-background:rgba(47, 48, 58, 0.8);
 }
 
 h1,
@@ -300,6 +301,7 @@ body {
 .services .item {
     width: calc((100%-60px)/3);
     height: auto;
+    position: relative;
 }
 
 .services .item:not(:last-child) {
@@ -308,6 +310,26 @@ body {
 
 .services {
     margin-bottom: 94px;
+}
+
+.service-title {
+    display: block;
+    padding: 27px 0;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    
+    color: var(--white-color);
+    background-color: var(--service-title-background);
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 /* Team */
