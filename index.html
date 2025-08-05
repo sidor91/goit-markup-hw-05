@@ -51,7 +51,7 @@
 			<section class="hero">
 				<div class="container">
 					<h1 class="main-title">Effective Solutions for Your Business</h1>
-					<button class="hero-button" type="button">Order Service</button>
+					<button data-modal-open class="hero-button" type="button">Order Service</button>
 				</div>
 			</section>
 			<!--Features-->
@@ -371,11 +371,24 @@
 						</li>
 					</ul>
 				</div>
+        <div class="form-container">
+          <p class="form-header">Subscribe</p>
+          <form class="footer-form">
+            <label for="" class="footer-form-label">
+              <input type="email" name="subscribe-email" placeholder="E-mail" class="footer-form-input">
+            </label>
+            <button class="footer-form-submit-btn" type="submit">Subscribe
+              <svg width="24" height="24" class="footer-form-submit-icon">
+                <use href="./images/icons.svg#icon-send-icon"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
 			</div>
 		</footer>
-		<div class="backdrop is-open">
+		<div data-modal class="backdrop is-open">
 			<div class="modal">
-				<button type="button" class="close-btn">
+				<button data-modal-close type="button" class="close-btn">
 					<svg width="8" height="8" class="close-btn-icon">
 						<use href="./images/icons.svg#icon-close-btn"></use>
 					</svg>
@@ -420,7 +433,7 @@
 						<textarea name="user-comment" id="user-comment" placeholder="Text input" class="textarea-input"></textarea>
 					</div>
 					<div class="checkbox-container">
-						<input type="checkbox" name="user-privacy" id="user-privacy" value="true" class="visually-hidden" /><label
+						<input type="checkbox" name="user-privacy" id="user-privacy" value="true" class="user-privacy-checkbox visually-hidden" /><label
 							for="user-privacy"
 							class="user-privacy-label"
 							><span class="user-privacy-custom-checkbox">
@@ -434,5 +447,6 @@
 				</form>
 			</div>
 		</div>
+    <script src="./js/modal.js"></script>
 	</body>
 </html>
