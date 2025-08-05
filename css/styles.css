@@ -371,7 +371,7 @@ header {
 	letter-spacing: 0.02em;
 	color: var(--cloud);
 	padding: 40px 32px;
-	background-color: #4d5ae5;
+	background-color: var(--iris);
 	height: 100%;
 	width: 100%;
 	transform: translateY(100%);
@@ -487,6 +487,7 @@ header {
 	width: 408px;
 	min-height: 584px;
 	transform: translate(-50%, -50%);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	border-radius: 4px;
 	background-color: var(--dairy);
@@ -497,13 +498,17 @@ header {
 	position: absolute;
 	top: 24px;
 	right: 24px;
+
 	background-color: var(--cornflower);
 
-	border: 1px solid #d0d2e3;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
 
 	width: 24px;
 	height: 24px;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	display: flex;
 	align-items: center;
@@ -512,14 +517,17 @@ header {
 
 .modal .close-btn:hover {
 	background-color: var(--ocean);
+	border: none;
 }
 
-.modal .close-btn:hover .close-btn-icon {
+.modal .close-btn:hover .close-btn-icon,
+.modal .close-btn:focus .close-btn-icon {
 	fill: var(--white-color);
 }
 
 .close-btn-icon {
 	fill: var(--navy-blue);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-header {
@@ -529,13 +537,17 @@ header {
 	font-weight: 500;
 	line-height: 1.5;
 	letter-spacing: 0.32px;
+	text-align: center;
 }
 
 .modal-form {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
-  width: 100%;
+	width: 100%;
+}
+
+.input-section {
+	margin-bottom: 8px;
 }
 
 .label {
@@ -544,16 +556,43 @@ header {
 
 	font-size: 12px;
 	font-weight: 400;
-	line-height: 1.16667;
+	line-height: 1.17;
 	letter-spacing: 0.48px;
+
+	display: block;
 }
 
 .input-container {
- position: relative;
+	position: relative;
 }
 
 .form-input {
-  width: 100%;
-   border-radius: 4px;
-border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+	width: 100%;
+	height: 40px;
+	background-color: transparent;
+
+	padding-left: 38px;
+	outline: transparent;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	border-radius: 4px;
+	border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
 }
+
+.form-input:focus {
+	border-color: var(--iris);
+}
+
+.form-input:focus .input-icon {
+	fill: var(--iris); 
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--navy-blue);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
